@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE-edge">
+        <title>Calculator</title>
+
+    </head>
+
+<body>
+
+    Hello everyone
+    <script type="text/javascript">
+        var calculator = (function () {
+            let Calculator = {
+                operations: [
+                    /*{
+                        parameter1: 1,
+                        type: '+',
+                        parameter2: 2,
+                        result: 3
+                    }*/
+                ],
+            }
+
+            let add = function (a, b) {
+                const result = a + b;
+                Calculator.operations.push({
+                    parameter1: a,
+                    type: '+',
+                    parameter2: b,
+                    result,
+                })
+                return result;
+            }
+
+            function substract(a, b) {
+                const result=a-b;
+                Calculator.operations.push({
+                    parameter1: a,
+                    type: '-',
+                    parameter2: b,
+                    result,
+                })
+                return  result;
+            }
+            function divide(a, b) { 
+                const result=a/b;
+                Calculator.operations.push({
+                    parameter1: a,
+                    type: '/',
+                    parameter2: b,
+                    result,
+                })
+                return  result;
+            }
+            function multiply(a, b) {
+                const result=a*b;
+                Calculator.operations.push({
+                    parameter1: a,
+                    type: '*',
+                    parameter2: b,
+                    result,
+                })
+                return  result;
+            
+            }
+
+
+            function getHistory() {
+                return Calculator.operations;
+            }
+
+            return { Calculator, substract, add, divide, multiply, getHistory }
+
+
+        })();
+        const result = calculator.add(1, 2);
+        console.log(result);
+
+        const result2 = calculator.substract(1, 2);
+        console.log(result2);
+
+        console.log(calculator.divide(1, 2));
+        console.log(calculator.multiply(1, 2));
+
+        console.log(calculator.getHistory());
+
+    </script>
+</body>
+
+</html>
